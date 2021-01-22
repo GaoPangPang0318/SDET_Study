@@ -63,6 +63,7 @@ class TestAction(Base):
         #action.send_keys(Keys.SPACE).perform()  # 报错内容: selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document
         # action.send_keys("Tom").perform()
 
+    @pytest.mark.skip
     def test_touchactions(self):
         """
             联系以下内容：
@@ -88,7 +89,25 @@ class TestAction(Base):
         """
 
     #还可以联系拖拽：https://www.runoob.com/try/try.php?filename=jqueryui-api-droppable
+    def test_frame_drag(self):
+        """
+            练习以下内容：
+            1.ActionChains： click_and_hold
+            2.切换frame：switch_to.frame()  switch_to.deault_content()
+        """
+        self.driver.get("https://www.runoob.com/try/try.php?filename=jqueryui-api-droppable")
+        self.driver.switch_to.frame('iframeResult')
 
+        el_draggable=self.driver.find_element_by_id('draggable')
+        el_droppable=self.driver.find_element_by_id('droppable')
+
+        action=ActionChains(self.driver)
+        action.click_and_hold(el_draggable).move_to_element(el_droppable).perform()
+        sleep(5)
+        self.driver.switch_to.default_content()
+
+        el_submit=self.driver.find_element_by_id('submitBTN')
+        print(el_submit.text)
 
 
 
