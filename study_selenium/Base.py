@@ -4,7 +4,7 @@ class Base():
     def setup(self):
         option=webdriver.ChromeOptions()
         option.add_experimental_option('w3c',False)
-        self.driver=webdriver.Chrome()
+        self.driver=webdriver.Chrome(options=option)
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
 
