@@ -1,5 +1,11 @@
+from time import sleep
+
 import pytest
 from appium import webdriver
+from appium.webdriver.common.mobileby import MobileBy
+from appium.webdriver.common.touch_action import TouchAction
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class TestDw:
@@ -12,7 +18,7 @@ class TestDw:
         desired_caps['appActivity']='.view.WelcomeActivityAlias'
         desired_caps['noResrt']=True
         #首次运行APP后不对APP进行重置操作
-        #desired_caps['dontStopAppOnReset']=True
+        desired_caps['dontStopAppOnReset']=True
         #跳过app初始化需要获取权限的操作
         desired_caps['skipDeviceInintialization']=True
         # send_keys的值为中文的话得有以下两个条件
@@ -50,6 +56,7 @@ class TestDw:
         #断言操作
         assert  current_price>200
 
+    @pytest.mark.skip
     def test_attribute(self):
         """
             1.打开雪球应用
@@ -74,6 +81,59 @@ class TestDw:
                 print("搜索成功")
             else:
                 print("搜索失败")
+
+    @pytest.mark.skip
+    def test_touchaction(self):
+        #定义 touchaction
+        action=TouchAction(self.driver)
+
+        #获取窗口大小
+        windows_rect=self.driver.get_window_rect() #获取窗口大小
+        print(windows_rect)
+        width=windows_rect['width']
+        height=windows_rect['height']
+        x1=int(width/2)
+        y_1=int(height*0.8)
+        y_2=int(height*0.2)
+
+        #显示等待
+        #显示等待判断元素，元祖   （定位方式，定位值）
+        locator=(MobileBy.XPATH,"//*[@resource-id='com.xueqiu.android:id/home_search']")
+        #显示等待使用格式   expected_conditions 后面条件得知道能更些啥
+        WebDriverWait(self.driver,10).until(expected_conditions.element_to_be_clickable(locator))
+
+        #touchaction方法，不要忘记perform（）
+        action.press(x=x1,y=y_1).wait(200).move_to(x=x1,y=y_2).release().perform()
+
+    def test_uiaotmator(self):
+        """
+          1.点击我的，进入个人信息页面
+          2.点击登录，进入到登录页面
+          3.输入用户名和密码
+          4.点击登录
+        """
+        locator = (MobileBy.XPATH, "//*[@resource-id='com.xueqiu.android:id/home_search']")
+        # 显示等待使用格式   expected_conditions 后面条件得知道能更些啥
+        WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable(locator))
+
+        #uiautomator定位方法  虽然快，但是容易出错
+        self.driver.find_element_by_android_uiautomator('new UiSelector().text("我的")').click()   #必须使用‘  ’ ，find_element_by_android_uiautomator('new UiSelector().text("我的")')
+        self.driver.find_element_by_android_uiautomator('new UiSelector().text("帐号密码登录")').click()
+        self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.xueqiu.android:id/login_account")').send_keys('18362947918')
+        self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.xueqiu.android:id/login_password")').send_keys('gjj920318')
+        self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.xueqiu.android:id/button_next")').click()
+        sleep(5)
+
+        #处理导入自选股票弹框，选择“取消”
+        self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.xueqiu.android:id/tv_left")').click()
+
+        #滚动查找元素
+        self.driver.find_element_by_android_uiautomator('new UiSelector().text("雪球")').click()
+        self.driver.find_element_by_android_uiautomator('resourceId("com.xueqiu.android:id/title_text").text("关注")').click()
+
+        self.driver.find_element_by_android_uiautomator('new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text("酒鬼酒(SZ000799)").instance(0))').click()
+        sleep(5)
+
 
 if __name__ == '__main__':
     pytest.main()
