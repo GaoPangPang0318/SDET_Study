@@ -72,10 +72,21 @@ class BasePage:
                     if "click" ==step["action"]:
                         element.click()
                     if "send" ==step["action"]:
-                        content:str=step["value"]
-                        for param in self._params:
-                            content=content.replace("{%s}"%param,self._params[param])
+                        #记住这个写法，感觉会很有用
+                        content:str=step["value"] #content=“{value}”
+                        for param in self._params: #param为key，此处为：value
+                            content=content.replace("{%s}"%param,self._params[param])  # "{%s}"%param ==“{value}”
                         self.send(content,step["by"],step["locator"])
+
+                    #为了搞清楚以上的操作 做的简答的操作
+                    # params = {"value": "abc"}
+                    # content = "{value}"
+                    # print(params)
+                    # print(type(params))
+                    # for param in params:
+                    #     print(type(param))
+                    #     print(param)
+                    #     print(content.replace("{%s}" % param, params[param]))
 
 
 

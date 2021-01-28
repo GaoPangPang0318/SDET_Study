@@ -30,12 +30,7 @@ class App(BasePage):
         else:
             self._driver.start_activity(_package,_activity)
 
-        return self
-
-
-    def teardown(self):
-        self._driver.quit()
-
+        return self  #为啥要返回self？？ 调用的时候得用实例对象啊，不返回实例对象的话怎么调佣其他功能呢。
 
     def main(self):
         return Main(self._driver)  #跳转到哪个界面 就return那个类并实例化
