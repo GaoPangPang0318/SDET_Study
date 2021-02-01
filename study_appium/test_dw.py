@@ -105,6 +105,7 @@ class TestDw:
         #touchaction方法，不要忘记perform（）
         action.press(x=x1,y=y_1).wait(200).move_to(x=x1,y=y_2).release().perform()
 
+    @pytest.mark.skip
     def test_uiaotmator(self):
         """
           1.点击我的，进入个人信息页面
@@ -133,6 +134,10 @@ class TestDw:
 
         self.driver.find_element_by_android_uiautomator('new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text("酒鬼酒(SZ000799)").instance(0))').click()
         sleep(5)
+
+
+    def test_parametrizesearch(self):
+        pass
 
 
 if __name__ == '__main__':

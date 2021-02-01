@@ -1,0 +1,54 @@
+add:
+  datas:
+    - [2,3,5]
+    - [-2,-3,-5]
+    - [500,600,1100]
+    - [0.1,0.2,0.3]
+  ids:
+    - 'int'
+    - 'minus'
+    - 'bigint'
+    - 'float'
+sub:
+  datas:
+    - [1,1,0]
+    - [1,2,-1]
+    - [-1,-2,1]
+    - [500,300,200]
+    - [0.3,0.1,0.2]
+  ids:
+    - 'int'
+    - 'int_minuend_is_smaller'
+    - 'minus'
+    - 'bigint'
+    - 'float'
+mul:
+  datas:
+    - [2,3,6]
+    - [0,1,0]
+    - [-2,3,-6]
+    - [-2,-3,6]
+    - [200,300,60000]
+    - [0.2,0.3,0.06]
+  ids:
+    - 'int'
+    - 'zero'
+    - 'minus_posit'
+    - 'minus_minus'
+    - 'bigint'
+    - 'float'
+div:
+  datas:
+    - [6,2,3]
+    - [0,1,0]
+    - [-6,2,-3]
+    - [-6,-2,3]
+    - [500,100,5]
+    - [0.5,0.2,2.5]
+  ids:
+    - 'int'
+    - 'zero'
+    - 'minus_posit'
+    - 'minus_minus'
+    - 'bigint'
+    - 'float'
