@@ -5,7 +5,7 @@ import yaml
 
 def func(x):
     return x + 1
-@pytest.mark.parametrize('a,b',yaml.safe_load(open('./pytest/test_data.yaml')))   #参数化：将测试用以的变量参数化，可通过外部输入来传递
+@pytest.mark.parametrize('a,b',yaml.safe_load(open('./study_pytest/test_data.yaml')))   #参数化：将测试用以的变量参数化，可通过外部输入来传递
 def test_answer(a,b):   #参数化后，方便生成多条测试用例
     assert func(a) == b
 
