@@ -40,11 +40,14 @@ class TestDemo:
     #header构造——get方法：headers参数
     def test_header(self):
         headers = {
+            "H":"header_gaopangpang",
             "User-Agent": "gaopangpang-app/0.0.1"
         }
         r = requests.get('https://httpbin.testing-studio.com/get', headers=headers)
         print(r.text)
         assert r.status_code == 200
+        #断言
+        assert r.json()['headers']["H"]=='header_gaopangpang'
 
     #cookie构造——get方法：cookies参数
     def test_cookie(self):
