@@ -2,6 +2,9 @@
 演练课程：接口请求构造GET/POST/PUT/HEAD
 """
 import requests
+from jsonpath import jsonpath
+from requests.auth import HTTPBasicAuth
+
 
 class TestDemo:
     #简单的HTTP请求方法的构造
@@ -55,4 +58,38 @@ class TestDemo:
         r = requests.get('https://httpbin.testing-studio.com/get', cookies=cookies)
         print(r.text)
         assert r.status_code == 200
+
+    #Json请求体构造——post方法：json参数
+    def test_post_json(self):
+        payload={
+            "level":1,
+            "name":"gaopangpang"
+        }
+        r=requests.post('https://httpbin.testing-studio.com/post',json=payload)
+        print(r.text)
+        assert r.status_code==200
+        assert r.json()["json"]["level"]==1
+
+    #XML请求构造——post方法：参数data=xml headers=headers
+    #xml=【xml结构内容】
+    #headers={"Content-Type": "application/xml"}
+    #r=requests.post('https://httpbin.testing-studio.com/post',data=xml,headers=headers)
+    #不做多余演示
+
+    #JSON Path 断言
+    def test_json_path(self):
+        r=requests.get("https://ceshiren.com/categories.json")
+        print(r.text)
+        assert r.status_code==200
+        print(jsonpath(r.json(), '$..name'))
+        #使用jsonpath进行断言
+        assert jsonpath(r.json(),'$..name')[8]=="霍格沃兹测试学院公众号"
+
+    #HTTPBasic——认证体系
+    def test_auth(self):
+        r=requests.get(url="https://httpbin.testing-studio.com/basic-auth/gaopangpang/123",auth=HTTPBasicAuth("gaopangpang","123"))
+        print(r)
+
+
+    
 
