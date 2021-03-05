@@ -1,4 +1,4 @@
-from study_appium_datadriven_sonwball.page.app import App
+from study_appium_po.page.app import App
 
 
 class TestSearch:

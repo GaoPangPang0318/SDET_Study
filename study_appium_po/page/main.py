@@ -1,7 +1,7 @@
 from asyncio import sleep
 
-from study_appium_datadriven_sonwball.page.basepage import BasePage
-from study_appium_datadriven_sonwball.page.market import Market
+from study_appium_po.page.basepage import BasePage
+from study_appium_po.page.market import Market
 
 
 

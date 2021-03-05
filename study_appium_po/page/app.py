@@ -1,8 +1,8 @@
 from asyncio import sleep
 
 from appium import webdriver
-from study_appium_datadriven_sonwball.page.basepage import BasePage
-from study_appium_datadriven_sonwball.page.main import Main
+from study_appium_po.page.basepage import BasePage
+from study_appium_po.page.main import Main
 
 
 class App(BasePage):

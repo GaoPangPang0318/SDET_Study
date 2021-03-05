@@ -1,4 +1,4 @@
-from study_appium_datadriven_sonwball.page.basepage import BasePage
+from study_appium_po.page.basepage import BasePage
 
 
 class Search(BasePage):
