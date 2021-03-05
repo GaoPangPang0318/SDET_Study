@@ -33,6 +33,5 @@ class TestDemo:
         assert func(5)==4
 
 
-
 if  __name__=='__main__':
      pytest.main(['test_sample.py::test_answer','-v'])
