@@ -8,6 +8,5 @@
 6. study_selenium: web自动化测试  
 7. study_unittest: unittest测试框架  
 8. study_yaml&ullure: pytest测试框架——数据驱动和测试报表定制  
-
-##直播课程演示代码
+## 直播课程演示代码
 1. live_selenium_po: 企业微信web端自动化测试实战(二)  
