@@ -7,7 +7,7 @@ from live_selenium_po.podemo.index_page import IndexPage
 
 class TestRegister:
     def setup(self):
-        self.index = IndexPage()
+        self.index = IndexPage() #首页实例化  产生一个webdriver
 
     def test_register(self):
         # assert self.index.goto_login().goto_register().register()

@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 
 
-class RegisterPage():
+class RegisterPage:
     # 类型提示
     def __init__(self,driver:WebDriver):
         self.driver = driver

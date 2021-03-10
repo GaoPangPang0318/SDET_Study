@@ -1,4 +1,3 @@
-from appium.webdriver.common.mobileby import MobileBy
 
 from live_appium_po.pages.basepage import BasePage
 from live_appium_po.pages.sign_page import SignPage

@@ -23,7 +23,7 @@ class IndexPage:
         # click login button
         self.driver.find_element(By.CSS_SELECTOR, ".index_top_operation_loginBtn").click()
         # return LoginPage
-        return LoginPage(self.driver)
+        return LoginPage(self.driver)     #把首页初始的self.driver传参给loginPage， #返回一个RegisterPage实例
 
     def goto_register(self):
         '''
@@ -33,4 +33,4 @@ class IndexPage:
         # click register button
         self.driver.find_element(By.CSS_SELECTOR, ".index_head_info_pCDownloadBtn").click()
         # return RegisterPage
-        return RegisterPage(self.driver)
+        return RegisterPage(self.driver)  #返回一个RegisterPage实例
