@@ -21,7 +21,7 @@ class TestToast:
 
     def test_toast(self):
         """
-        软件：android api demo
+        软件：android api study_httprunner
         定位工具：uiautomatorviewer
         操作：获取toast的text
              1.进入Views/PopupMenu，点击MAKE A POPUP
