@@ -9,7 +9,7 @@ from requests.auth import HTTPBasicAuth
 class TestDemo:
     #简单的HTTP请求方法的构造
     def test_demo(self):
-        r=requests.get('https://httpbin.testing-studio.com/get')
+        r=requests.get('https://httpbin.org/get')
         print(r.status_code)
         print(r.text)
         print(r.json())
@@ -21,7 +21,7 @@ class TestDemo:
             "level":1,
             "name":"gaopangpang"
         }
-        r=requests.get('https://httpbin.testing-studio.com/get',params=payload)
+        r=requests.get('https://httpbin.org/get',params=payload)
         print(r.text)
         assert r.status_code==200
 
@@ -31,7 +31,7 @@ class TestDemo:
             "level": 1,
             "name": "gaopangpang"
         }
-        r = requests.post('https://httpbin.testing-studio.com/post', data=payload)
+        r = requests.post('https://httpbin.org/post', data=payload)
         print(r.text)
         assert r.status_code == 200
 
@@ -46,7 +46,7 @@ class TestDemo:
             "H":"header_gaopangpang",
             "User-Agent": "gaopangpang-app/0.0.1"
         }
-        r = requests.get('https://httpbin.testing-studio.com/get', headers=headers)
+        r = requests.get('https://httpbin.org/get', headers=headers)
         print(r.text)
         assert r.status_code == 200
         #断言
@@ -55,7 +55,7 @@ class TestDemo:
     #cookie构造——get方法：cookies参数
     def test_cookie(self):
         cookies = dict(cookies_are='working')
-        r = requests.get('https://httpbin.testing-studio.com/get', cookies=cookies)
+        r = requests.get('https://httpbin.org/get', cookies=cookies)
         print(r.text)
         assert r.status_code == 200
 
@@ -65,7 +65,7 @@ class TestDemo:
             "level":1,
             "name":"gaopangpang"
         }
-        r=requests.post('https://httpbin.testing-studio.com/post',json=payload)
+        r=requests.post('https://httpbin.org/post',json=payload)
         print(r.text)
         assert r.status_code==200
         assert r.json()["json"]["level"]==1
@@ -73,7 +73,7 @@ class TestDemo:
     #XML请求构造——post方法：参数data=xml headers=headers
     #xml=【xml结构内容】
     #headers={"Content-Type": "application/xml"}
-    #r=requests.post('https://httpbin.testing-studio.com/post',data=xml,headers=headers)
+    #r=requests.post('https://httpbin.org/post',data=xml,headers=headers)
     #不做多余演示
 
     #JSON Path 断言
@@ -87,7 +87,7 @@ class TestDemo:
 
     #HTTPBasic——认证体系
     def test_auth(self):
-        r=requests.get(url="https://httpbin.testing-studio.com/basic-auth/gaopangpang/123",auth=HTTPBasicAuth("gaopangpang","123"))
+        r=requests.get(url="https://httpbin.org/basic-auth/gaopangpang/123",auth=HTTPBasicAuth("gaopangpang","123"))
         print(r)
 
 
