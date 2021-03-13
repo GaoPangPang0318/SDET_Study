@@ -932,479 +932,479 @@ class TestCaseMubu(HttpRunner):
             .validate()
             .assert_equal("status_code", 200)
             .assert_equal("body.code", 0)
-        ),
-        Step(
-            RunRequest("/v3/api/colla/message")
-            .post("https://api2.mubu.com/v3/api/colla/message")
-            .with_headers(
-                **{
-                    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
-                    "accept": "application/json, text/plain, */*",
-                    "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
-                    "accept-encoding": "gzip, deflate, br",
-                    "content-type": "application/json;charset=utf-8",
-                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
-                    "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
-                    "x-request-id": "67f4dba7-b94a-47b7-9e46-be021a55d33c",
-                    "request-id": "MESSAGE:5634123:2654354234878869:7",
-                    "member-id": "2654354234878869",
-                    "version": "3.0.0",
-                    "content-length": "503",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/app/edit/home/40gQGtFLg5r",
-                    "te": "trailers",
-                }
-            )
-            .with_json(
-                {
-                    "engineType": "MUBU",
-                    "messageType": "BROADCAST",
-                    "reqId": 7,
-                    "requestId": "MESSAGE:5634123:2654354234878869:7",
-                    "token": "40gQGtFLg5r",
-                    "data": {
-                        "message": {
-                            "type": "CHANGE",
-                            "documentId": "40gQGtFLg5r",
-                            "version": 2,
-                            "content": [
-                                {
-                                    "name": "update",
-                                    "updated": [
-                                        {
-                                            "updated": {
-                                                "id": "6j1N2tyNP6",
-                                                "text": "<span>111</span>",
-                                                "modified": 1615359799870,
-                                            },
-                                            "original": {
-                                                "id": "6j1N2tyNP6",
-                                                "text": "",
-                                                "modified": 1615359798218,
-                                            },
-                                            "path": ["nodes", 0],
-                                        }
-                                    ],
-                                }
-                            ],
-                        }
-                    },
-                    "context": {
-                        "os": "Windows",
-                        "osVersion": "NT 10.0",
-                        "appVersion": "default",
-                        "platform": "web",
-                    },
-                }
-            )
-            .validate()
-            .assert_equal("status_code", 200)
-            .assert_equal("body.code", 0)
-        ),
-        Step(
-            RunRequest("/v3/api/colla/message")
-            .post("https://api2.mubu.com/v3/api/colla/message")
-            .with_headers(
-                **{
-                    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
-                    "accept": "application/json, text/plain, */*",
-                    "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
-                    "accept-encoding": "gzip, deflate, br",
-                    "content-type": "application/json;charset=utf-8",
-                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
-                    "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
-                    "x-request-id": "04c6c5fb-6cae-4774-b45f-9133cd4e9a40",
-                    "request-id": "MESSAGE:5634123:2654354234878869:9",
-                    "member-id": "2654354234878869",
-                    "version": "3.0.0",
-                    "content-length": "458",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/app/edit/home/40gQGtFLg5r",
-                    "te": "trailers",
-                }
-            )
-            .with_json(
-                {
-                    "engineType": "MUBU",
-                    "messageType": "BROADCAST",
-                    "reqId": 9,
-                    "requestId": "MESSAGE:5634123:2654354234878869:9",
-                    "token": "40gQGtFLg5r",
-                    "data": {
-                        "message": {
-                            "type": "CHANGE",
-                            "documentId": "40gQGtFLg5r",
-                            "version": 3,
-                            "content": [
-                                {
-                                    "name": "create",
-                                    "created": [
-                                        {
-                                            "index": 1,
-                                            "parentId": None,
-                                            "node": {
-                                                "id": "CGqwbAdYHq",
-                                                "text": "",
-                                                "modified": 1615359800299,
-                                                "children": [],
-                                            },
-                                            "path": ["nodes", 1],
-                                        }
-                                    ],
-                                }
-                            ],
-                        }
-                    },
-                    "context": {
-                        "os": "Windows",
-                        "osVersion": "NT 10.0",
-                        "appVersion": "default",
-                        "platform": "web",
-                    },
-                }
-            )
-            .validate()
-            .assert_equal("status_code", 200)
-            .assert_equal("body.code", 0)
-        ),
-        Step(
-            RunRequest("/v3/api/colla/message")
-            .post("https://api2.mubu.com/v3/api/colla/message")
-            .with_headers(
-                **{
-                    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
-                    "accept": "application/json, text/plain, */*",
-                    "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
-                    "accept-encoding": "gzip, deflate, br",
-                    "content-type": "application/json;charset=utf-8",
-                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
-                    "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
-                    "x-request-id": "35f59937-fe2d-4de6-b63b-1613aab8a383",
-                    "request-id": "MESSAGE:5634123:2654354234878869:11",
-                    "member-id": "2654354234878869",
-                    "version": "3.0.0",
-                    "content-length": "504",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/app/edit/home/40gQGtFLg5r",
-                    "te": "trailers",
-                }
-            )
-            .with_json(
-                {
-                    "engineType": "MUBU",
-                    "messageType": "BROADCAST",
-                    "reqId": 11,
-                    "requestId": "MESSAGE:5634123:2654354234878869:11",
-                    "token": "40gQGtFLg5r",
-                    "data": {
-                        "message": {
-                            "type": "CHANGE",
-                            "documentId": "40gQGtFLg5r",
-                            "version": 4,
-                            "content": [
-                                {
-                                    "name": "update",
-                                    "updated": [
-                                        {
-                                            "updated": {
-                                                "id": "CGqwbAdYHq",
-                                                "text": "<span>22</span>",
-                                                "modified": 1615359801004,
-                                            },
-                                            "original": {
-                                                "id": "CGqwbAdYHq",
-                                                "text": "",
-                                                "modified": 1615359800299,
-                                            },
-                                            "path": ["nodes", 1],
-                                        }
-                                    ],
-                                }
-                            ],
-                        }
-                    },
-                    "context": {
-                        "os": "Windows",
-                        "osVersion": "NT 10.0",
-                        "appVersion": "default",
-                        "platform": "web",
-                    },
-                }
-            )
-            .validate()
-            .assert_equal("status_code", 200)
-            .assert_equal("body.code", 0)
-        ),
-        Step(
-            RunRequest("/v3/api/colla/message")
-            .post("https://api2.mubu.com/v3/api/colla/message")
-            .with_headers(
-                **{
-                    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
-                    "accept": "application/json, text/plain, */*",
-                    "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
-                    "accept-encoding": "gzip, deflate, br",
-                    "content-type": "application/json;charset=utf-8",
-                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
-                    "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
-                    "x-request-id": "a7fd572c-9abc-4a18-afed-28939fe69d7c",
-                    "request-id": "MESSAGE:5634123:2654354234878869:13",
-                    "member-id": "2654354234878869",
-                    "version": "3.0.0",
-                    "content-length": "520",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/app/edit/home/40gQGtFLg5r",
-                    "te": "trailers",
-                }
-            )
-            .with_json(
-                {
-                    "engineType": "MUBU",
-                    "messageType": "BROADCAST",
-                    "reqId": 13,
-                    "requestId": "MESSAGE:5634123:2654354234878869:13",
-                    "token": "40gQGtFLg5r",
-                    "data": {
-                        "message": {
-                            "type": "CHANGE",
-                            "documentId": "40gQGtFLg5r",
-                            "version": 5,
-                            "content": [
-                                {
-                                    "name": "update",
-                                    "updated": [
-                                        {
-                                            "updated": {
-                                                "id": "CGqwbAdYHq",
-                                                "text": "<span>222</span>",
-                                                "modified": 1615359801244,
-                                            },
-                                            "original": {
-                                                "id": "CGqwbAdYHq",
-                                                "text": "<span>22</span>",
-                                                "modified": 1615359801004,
-                                            },
-                                            "path": ["nodes", 1],
-                                        }
-                                    ],
-                                }
-                            ],
-                        }
-                    },
-                    "context": {
-                        "os": "Windows",
-                        "osVersion": "NT 10.0",
-                        "appVersion": "default",
-                        "platform": "web",
-                    },
-                }
-            )
-            .validate()
-            .assert_equal("status_code", 200)
-            .assert_equal("body.code", 0)
-        ),
-        Step(
-            RunRequest("/v3/api/colla/message")
-            .post("https://api2.mubu.com/v3/api/colla/message")
-            .with_headers(
-                **{
-                    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
-                    "accept": "application/json, text/plain, */*",
-                    "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
-                    "accept-encoding": "gzip, deflate, br",
-                    "content-type": "application/json;charset=utf-8",
-                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
-                    "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
-                    "x-request-id": "d3bf5d84-8a37-492e-8428-643f9611aa46",
-                    "request-id": "MESSAGE:5634123:2654354234878869:14",
-                    "member-id": "2654354234878869",
-                    "version": "3.0.0",
-                    "content-length": "460",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/app/edit/home/40gQGtFLg5r",
-                    "te": "trailers",
-                }
-            )
-            .with_json(
-                {
-                    "engineType": "MUBU",
-                    "messageType": "BROADCAST",
-                    "reqId": 14,
-                    "requestId": "MESSAGE:5634123:2654354234878869:14",
-                    "token": "40gQGtFLg5r",
-                    "data": {
-                        "message": {
-                            "type": "CHANGE",
-                            "documentId": "40gQGtFLg5r",
-                            "version": 6,
-                            "content": [
-                                {
-                                    "name": "create",
-                                    "created": [
-                                        {
-                                            "index": 2,
-                                            "parentId": None,
-                                            "node": {
-                                                "id": "4QjLn6hPi1",
-                                                "text": "",
-                                                "modified": 1615359801977,
-                                                "children": [],
-                                            },
-                                            "path": ["nodes", 2],
-                                        }
-                                    ],
-                                }
-                            ],
-                        }
-                    },
-                    "context": {
-                        "os": "Windows",
-                        "osVersion": "NT 10.0",
-                        "appVersion": "default",
-                        "platform": "web",
-                    },
-                }
-            )
-            .validate()
-            .assert_equal("status_code", 200)
-            .assert_equal("body.code", 0)
-        ),
-        Step(
-            RunRequest("/v3/api/colla/message")
-            .post("https://api2.mubu.com/v3/api/colla/message")
-            .with_headers(
-                **{
-                    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
-                    "accept": "application/json, text/plain, */*",
-                    "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
-                    "accept-encoding": "gzip, deflate, br",
-                    "content-type": "application/json;charset=utf-8",
-                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
-                    "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
-                    "x-request-id": "a1f5a55f-fe60-4474-a3e7-3e72b357ce73",
-                    "request-id": "MESSAGE:5634123:2654354234878869:16",
-                    "member-id": "2654354234878869",
-                    "version": "3.0.0",
-                    "content-length": "505",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/app/edit/home/40gQGtFLg5r",
-                    "te": "trailers",
-                }
-            )
-            .with_json(
-                {
-                    "engineType": "MUBU",
-                    "messageType": "BROADCAST",
-                    "reqId": 16,
-                    "requestId": "MESSAGE:5634123:2654354234878869:16",
-                    "token": "40gQGtFLg5r",
-                    "data": {
-                        "message": {
-                            "type": "CHANGE",
-                            "documentId": "40gQGtFLg5r",
-                            "version": 7,
-                            "content": [
-                                {
-                                    "name": "update",
-                                    "updated": [
-                                        {
-                                            "updated": {
-                                                "id": "4QjLn6hPi1",
-                                                "text": "<span>333</span>",
-                                                "modified": 1615359802880,
-                                            },
-                                            "original": {
-                                                "id": "4QjLn6hPi1",
-                                                "text": "",
-                                                "modified": 1615359801977,
-                                            },
-                                            "path": ["nodes", 2],
-                                        }
-                                    ],
-                                }
-                            ],
-                        }
-                    },
-                    "context": {
-                        "os": "Windows",
-                        "osVersion": "NT 10.0",
-                        "appVersion": "default",
-                        "platform": "web",
-                    },
-                }
-            )
-            .validate()
-            .assert_equal("status_code", 200)
-            .assert_equal("body.code", 0)
-        ),
-        Step(
-            RunRequest("/v3/api/list/item_count")
-            .post("https://api2.mubu.com/v3/api/list/item_count")
-            .with_headers(
-                **{
-                    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
-                    "accept": "application/json, text/plain, */*",
-                    "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
-                    "accept-encoding": "gzip, deflate, br",
-                    "content-type": "application/json;charset=utf-8",
-                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
-                    "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
-                    "x-request-id": "984376f0-ed86-4ee2-aee6-4c95bc748134",
-                    "version": "default",
-                    "content-length": "30",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/app",
-                    "te": "trailers",
-                }
-            )
-            .with_json({"folderId": 0, "source": "home"})
-            .validate()
-            .assert_equal("status_code", 200)
-            .assert_equal("body.code", 0)
-        ),
-        Step(
-            RunRequest("/v3/api/colla/message")
-            .post("https://api2.mubu.com/v3/api/colla/message")
-            .with_headers(
-                **{
-                    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
-                    "accept": "application/json, text/plain, */*",
-                    "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
-                    "accept-encoding": "gzip, deflate, br",
-                    "content-type": "application/json;charset=utf-8",
-                    "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
-                    "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
-                    "x-request-id": "4b67b742-9df9-4ced-8a8f-7f9fa726f8d9",
-                    "request-id": "MESSAGE:5634123:2654354234878869:18",
-                    "member-id": "2654354234878869",
-                    "version": "3.0.0",
-                    "content-length": "227",
-                    "origin": "https://mubu.com",
-                    "referer": "https://mubu.com/app",
-                    "te": "trailers",
-                }
-            )
-            .with_json(
-                {
-                    "engineType": "MUBU",
-                    "messageType": "UNWATCH",
-                    "reqId": 18,
-                    "requestId": "MESSAGE:5634123:2654354234878869:18",
-                    "token": "40gQGtFLg5r",
-                    "data": {},
-                    "context": {
-                        "os": "Windows",
-                        "osVersion": "NT 10.0",
-                        "appVersion": "default",
-                        "platform": "web",
-                    },
-                }
-            )
-            .validate()
-            .assert_equal("status_code", 200)
-            .assert_equal("body.code", 0)
-        ),
-    ]
+        )#,
+    #     Step(
+    #         RunRequest("/v3/api/colla/message")
+    #         .post("https://api2.mubu.com/v3/api/colla/message")
+    #         .with_headers(
+    #             **{
+    #                 "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
+    #                 "accept": "application/json, text/plain, */*",
+    #                 "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+    #                 "accept-encoding": "gzip, deflate, br",
+    #                 "content-type": "application/json;charset=utf-8",
+    #                 "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
+    #                 "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
+    #                 "x-request-id": "67f4dba7-b94a-47b7-9e46-be021a55d33c",
+    #                 "request-id": "MESSAGE:5634123:2654354234878869:7",
+    #                 "member-id": "2654354234878869",
+    #                 "version": "3.0.0",
+    #                 "content-length": "503",
+    #                 "origin": "https://mubu.com",
+    #                 "referer": "https://mubu.com/app/edit/home/40gQGtFLg5r",
+    #                 "te": "trailers",
+    #             }
+    #         )
+    #         .with_json(
+    #             {
+    #                 "engineType": "MUBU",
+    #                 "messageType": "BROADCAST",
+    #                 "reqId": 7,
+    #                 "requestId": "MESSAGE:5634123:2654354234878869:7",
+    #                 "token": "40gQGtFLg5r",
+    #                 "data": {
+    #                     "message": {
+    #                         "type": "CHANGE",
+    #                         "documentId": "40gQGtFLg5r",
+    #                         "version": 2,
+    #                         "content": [
+    #                             {
+    #                                 "name": "update",
+    #                                 "updated": [
+    #                                     {
+    #                                         "updated": {
+    #                                             "id": "6j1N2tyNP6",
+    #                                             "text": "<span>111</span>",
+    #                                             "modified": 1615359799870,
+    #                                         },
+    #                                         "original": {
+    #                                             "id": "6j1N2tyNP6",
+    #                                             "text": "",
+    #                                             "modified": 1615359798218,
+    #                                         },
+    #                                         "path": ["nodes", 0],
+    #                                     }
+    #                                 ],
+    #                             }
+    #                         ],
+    #                     }
+    #                 },
+    #                 "context": {
+    #                     "os": "Windows",
+    #                     "osVersion": "NT 10.0",
+    #                     "appVersion": "default",
+    #                     "platform": "web",
+    #                 },
+    #             }
+    #         )
+    #         .validate()
+    #         .assert_equal("status_code", 200)
+    #         .assert_equal("body.code", 0)
+    #     ),
+    #     Step(
+    #         RunRequest("/v3/api/colla/message")
+    #         .post("https://api2.mubu.com/v3/api/colla/message")
+    #         .with_headers(
+    #             **{
+    #                 "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
+    #                 "accept": "application/json, text/plain, */*",
+    #                 "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+    #                 "accept-encoding": "gzip, deflate, br",
+    #                 "content-type": "application/json;charset=utf-8",
+    #                 "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
+    #                 "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
+    #                 "x-request-id": "04c6c5fb-6cae-4774-b45f-9133cd4e9a40",
+    #                 "request-id": "MESSAGE:5634123:2654354234878869:9",
+    #                 "member-id": "2654354234878869",
+    #                 "version": "3.0.0",
+    #                 "content-length": "458",
+    #                 "origin": "https://mubu.com",
+    #                 "referer": "https://mubu.com/app/edit/home/40gQGtFLg5r",
+    #                 "te": "trailers",
+    #             }
+    #         )
+    #         .with_json(
+    #             {
+    #                 "engineType": "MUBU",
+    #                 "messageType": "BROADCAST",
+    #                 "reqId": 9,
+    #                 "requestId": "MESSAGE:5634123:2654354234878869:9",
+    #                 "token": "40gQGtFLg5r",
+    #                 "data": {
+    #                     "message": {
+    #                         "type": "CHANGE",
+    #                         "documentId": "40gQGtFLg5r",
+    #                         "version": 3,
+    #                         "content": [
+    #                             {
+    #                                 "name": "create",
+    #                                 "created": [
+    #                                     {
+    #                                         "index": 1,
+    #                                         "parentId": None,
+    #                                         "node": {
+    #                                             "id": "CGqwbAdYHq",
+    #                                             "text": "",
+    #                                             "modified": 1615359800299,
+    #                                             "children": [],
+    #                                         },
+    #                                         "path": ["nodes", 1],
+    #                                     }
+    #                                 ],
+    #                             }
+    #                         ],
+    #                     }
+    #                 },
+    #                 "context": {
+    #                     "os": "Windows",
+    #                     "osVersion": "NT 10.0",
+    #                     "appVersion": "default",
+    #                     "platform": "web",
+    #                 },
+    #             }
+    #         )
+    #         .validate()
+    #         .assert_equal("status_code", 200)
+    #         .assert_equal("body.code", 0)
+    #     ),
+    #     Step(
+    #         RunRequest("/v3/api/colla/message")
+    #         .post("https://api2.mubu.com/v3/api/colla/message")
+    #         .with_headers(
+    #             **{
+    #                 "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
+    #                 "accept": "application/json, text/plain, */*",
+    #                 "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+    #                 "accept-encoding": "gzip, deflate, br",
+    #                 "content-type": "application/json;charset=utf-8",
+    #                 "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
+    #                 "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
+    #                 "x-request-id": "35f59937-fe2d-4de6-b63b-1613aab8a383",
+    #                 "request-id": "MESSAGE:5634123:2654354234878869:11",
+    #                 "member-id": "2654354234878869",
+    #                 "version": "3.0.0",
+    #                 "content-length": "504",
+    #                 "origin": "https://mubu.com",
+    #                 "referer": "https://mubu.com/app/edit/home/40gQGtFLg5r",
+    #                 "te": "trailers",
+    #             }
+    #         )
+    #         .with_json(
+    #             {
+    #                 "engineType": "MUBU",
+    #                 "messageType": "BROADCAST",
+    #                 "reqId": 11,
+    #                 "requestId": "MESSAGE:5634123:2654354234878869:11",
+    #                 "token": "40gQGtFLg5r",
+    #                 "data": {
+    #                     "message": {
+    #                         "type": "CHANGE",
+    #                         "documentId": "40gQGtFLg5r",
+    #                         "version": 4,
+    #                         "content": [
+    #                             {
+    #                                 "name": "update",
+    #                                 "updated": [
+    #                                     {
+    #                                         "updated": {
+    #                                             "id": "CGqwbAdYHq",
+    #                                             "text": "<span>22</span>",
+    #                                             "modified": 1615359801004,
+    #                                         },
+    #                                         "original": {
+    #                                             "id": "CGqwbAdYHq",
+    #                                             "text": "",
+    #                                             "modified": 1615359800299,
+    #                                         },
+    #                                         "path": ["nodes", 1],
+    #                                     }
+    #                                 ],
+    #                             }
+    #                         ],
+    #                     }
+    #                 },
+    #                 "context": {
+    #                     "os": "Windows",
+    #                     "osVersion": "NT 10.0",
+    #                     "appVersion": "default",
+    #                     "platform": "web",
+    #                 },
+    #             }
+    #         )
+    #         .validate()
+    #         .assert_equal("status_code", 200)
+    #         .assert_equal("body.code", 0)
+    #     ),
+    #     Step(
+    #         RunRequest("/v3/api/colla/message")
+    #         .post("https://api2.mubu.com/v3/api/colla/message")
+    #         .with_headers(
+    #             **{
+    #                 "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
+    #                 "accept": "application/json, text/plain, */*",
+    #                 "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+    #                 "accept-encoding": "gzip, deflate, br",
+    #                 "content-type": "application/json;charset=utf-8",
+    #                 "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
+    #                 "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
+    #                 "x-request-id": "a7fd572c-9abc-4a18-afed-28939fe69d7c",
+    #                 "request-id": "MESSAGE:5634123:2654354234878869:13",
+    #                 "member-id": "2654354234878869",
+    #                 "version": "3.0.0",
+    #                 "content-length": "520",
+    #                 "origin": "https://mubu.com",
+    #                 "referer": "https://mubu.com/app/edit/home/40gQGtFLg5r",
+    #                 "te": "trailers",
+    #             }
+    #         )
+    #         .with_json(
+    #             {
+    #                 "engineType": "MUBU",
+    #                 "messageType": "BROADCAST",
+    #                 "reqId": 13,
+    #                 "requestId": "MESSAGE:5634123:2654354234878869:13",
+    #                 "token": "40gQGtFLg5r",
+    #                 "data": {
+    #                     "message": {
+    #                         "type": "CHANGE",
+    #                         "documentId": "40gQGtFLg5r",
+    #                         "version": 5,
+    #                         "content": [
+    #                             {
+    #                                 "name": "update",
+    #                                 "updated": [
+    #                                     {
+    #                                         "updated": {
+    #                                             "id": "CGqwbAdYHq",
+    #                                             "text": "<span>222</span>",
+    #                                             "modified": 1615359801244,
+    #                                         },
+    #                                         "original": {
+    #                                             "id": "CGqwbAdYHq",
+    #                                             "text": "<span>22</span>",
+    #                                             "modified": 1615359801004,
+    #                                         },
+    #                                         "path": ["nodes", 1],
+    #                                     }
+    #                                 ],
+    #                             }
+    #                         ],
+    #                     }
+    #                 },
+    #                 "context": {
+    #                     "os": "Windows",
+    #                     "osVersion": "NT 10.0",
+    #                     "appVersion": "default",
+    #                     "platform": "web",
+    #                 },
+    #             }
+    #         )
+    #         .validate()
+    #         .assert_equal("status_code", 200)
+    #         .assert_equal("body.code", 0)
+    #     ),
+    #     Step(
+    #         RunRequest("/v3/api/colla/message")
+    #         .post("https://api2.mubu.com/v3/api/colla/message")
+    #         .with_headers(
+    #             **{
+    #                 "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
+    #                 "accept": "application/json, text/plain, */*",
+    #                 "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+    #                 "accept-encoding": "gzip, deflate, br",
+    #                 "content-type": "application/json;charset=utf-8",
+    #                 "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
+    #                 "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
+    #                 "x-request-id": "d3bf5d84-8a37-492e-8428-643f9611aa46",
+    #                 "request-id": "MESSAGE:5634123:2654354234878869:14",
+    #                 "member-id": "2654354234878869",
+    #                 "version": "3.0.0",
+    #                 "content-length": "460",
+    #                 "origin": "https://mubu.com",
+    #                 "referer": "https://mubu.com/app/edit/home/40gQGtFLg5r",
+    #                 "te": "trailers",
+    #             }
+    #         )
+    #         .with_json(
+    #             {
+    #                 "engineType": "MUBU",
+    #                 "messageType": "BROADCAST",
+    #                 "reqId": 14,
+    #                 "requestId": "MESSAGE:5634123:2654354234878869:14",
+    #                 "token": "40gQGtFLg5r",
+    #                 "data": {
+    #                     "message": {
+    #                         "type": "CHANGE",
+    #                         "documentId": "40gQGtFLg5r",
+    #                         "version": 6,
+    #                         "content": [
+    #                             {
+    #                                 "name": "create",
+    #                                 "created": [
+    #                                     {
+    #                                         "index": 2,
+    #                                         "parentId": None,
+    #                                         "node": {
+    #                                             "id": "4QjLn6hPi1",
+    #                                             "text": "",
+    #                                             "modified": 1615359801977,
+    #                                             "children": [],
+    #                                         },
+    #                                         "path": ["nodes", 2],
+    #                                     }
+    #                                 ],
+    #                             }
+    #                         ],
+    #                     }
+    #                 },
+    #                 "context": {
+    #                     "os": "Windows",
+    #                     "osVersion": "NT 10.0",
+    #                     "appVersion": "default",
+    #                     "platform": "web",
+    #                 },
+    #             }
+    #         )
+    #         .validate()
+    #         .assert_equal("status_code", 200)
+    #         .assert_equal("body.code", 0)
+    #     ),
+    #     Step(
+    #         RunRequest("/v3/api/colla/message")
+    #         .post("https://api2.mubu.com/v3/api/colla/message")
+    #         .with_headers(
+    #             **{
+    #                 "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
+    #                 "accept": "application/json, text/plain, */*",
+    #                 "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+    #                 "accept-encoding": "gzip, deflate, br",
+    #                 "content-type": "application/json;charset=utf-8",
+    #                 "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
+    #                 "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
+    #                 "x-request-id": "a1f5a55f-fe60-4474-a3e7-3e72b357ce73",
+    #                 "request-id": "MESSAGE:5634123:2654354234878869:16",
+    #                 "member-id": "2654354234878869",
+    #                 "version": "3.0.0",
+    #                 "content-length": "505",
+    #                 "origin": "https://mubu.com",
+    #                 "referer": "https://mubu.com/app/edit/home/40gQGtFLg5r",
+    #                 "te": "trailers",
+    #             }
+    #         )
+    #         .with_json(
+    #             {
+    #                 "engineType": "MUBU",
+    #                 "messageType": "BROADCAST",
+    #                 "reqId": 16,
+    #                 "requestId": "MESSAGE:5634123:2654354234878869:16",
+    #                 "token": "40gQGtFLg5r",
+    #                 "data": {
+    #                     "message": {
+    #                         "type": "CHANGE",
+    #                         "documentId": "40gQGtFLg5r",
+    #                         "version": 7,
+    #                         "content": [
+    #                             {
+    #                                 "name": "update",
+    #                                 "updated": [
+    #                                     {
+    #                                         "updated": {
+    #                                             "id": "4QjLn6hPi1",
+    #                                             "text": "<span>333</span>",
+    #                                             "modified": 1615359802880,
+    #                                         },
+    #                                         "original": {
+    #                                             "id": "4QjLn6hPi1",
+    #                                             "text": "",
+    #                                             "modified": 1615359801977,
+    #                                         },
+    #                                         "path": ["nodes", 2],
+    #                                     }
+    #                                 ],
+    #                             }
+    #                         ],
+    #                     }
+    #                 },
+    #                 "context": {
+    #                     "os": "Windows",
+    #                     "osVersion": "NT 10.0",
+    #                     "appVersion": "default",
+    #                     "platform": "web",
+    #                 },
+    #             }
+    #         )
+    #         .validate()
+    #         .assert_equal("status_code", 200)
+    #         .assert_equal("body.code", 0)
+    #     ),
+    #     Step(
+    #         RunRequest("/v3/api/list/item_count")
+    #         .post("https://api2.mubu.com/v3/api/list/item_count")
+    #         .with_headers(
+    #             **{
+    #                 "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
+    #                 "accept": "application/json, text/plain, */*",
+    #                 "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+    #                 "accept-encoding": "gzip, deflate, br",
+    #                 "content-type": "application/json;charset=utf-8",
+    #                 "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
+    #                 "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
+    #                 "x-request-id": "984376f0-ed86-4ee2-aee6-4c95bc748134",
+    #                 "version": "default",
+    #                 "content-length": "30",
+    #                 "origin": "https://mubu.com",
+    #                 "referer": "https://mubu.com/app",
+    #                 "te": "trailers",
+    #             }
+    #         )
+    #         .with_json({"folderId": 0, "source": "home"})
+    #         .validate()
+    #         .assert_equal("status_code", 200)
+    #         .assert_equal("body.code", 0)
+    #     ),
+    #     Step(
+    #         RunRequest("/v3/api/colla/message")
+    #         .post("https://api2.mubu.com/v3/api/colla/message")
+    #         .with_headers(
+    #             **{
+    #                 "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0",
+    #                 "accept": "application/json, text/plain, */*",
+    #                 "accept-language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
+    #                 "accept-encoding": "gzip, deflate, br",
+    #                 "content-type": "application/json;charset=utf-8",
+    #                 "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiNTYzNDEyMyIsImV4cCI6MTYxNzk1MTc4NSwiaWF0IjoxNjE1MzU5Nzg1fQ.TMaE3__PNoFYeCFvfsgTaHdzsGa9Oz5JgrTnJOb2Iw1FweZ9npAlghoYaUUaH0mQvPbqU83F5jBmHVv3OJv_lw",
+    #                 "data-unique-id": "dc1ace1f-23f8-4634-bf93-07f9980b7fa0",
+    #                 "x-request-id": "4b67b742-9df9-4ced-8a8f-7f9fa726f8d9",
+    #                 "request-id": "MESSAGE:5634123:2654354234878869:18",
+    #                 "member-id": "2654354234878869",
+    #                 "version": "3.0.0",
+    #                 "content-length": "227",
+    #                 "origin": "https://mubu.com",
+    #                 "referer": "https://mubu.com/app",
+    #                 "te": "trailers",
+    #             }
+    #         )
+    #         .with_json(
+    #             {
+    #                 "engineType": "MUBU",
+    #                 "messageType": "UNWATCH",
+    #                 "reqId": 18,
+    #                 "requestId": "MESSAGE:5634123:2654354234878869:18",
+    #                 "token": "40gQGtFLg5r",
+    #                 "data": {},
+    #                 "context": {
+    #                     "os": "Windows",
+    #                     "osVersion": "NT 10.0",
+    #                     "appVersion": "default",
+    #                     "platform": "web",
+    #                 },
+    #             }
+    #         )
+    #         .validate()
+    #         .assert_equal("status_code", 200)
+    #         .assert_equal("body.code", 0)
+    #     ),
+      ]
 
 
 if __name__ == "__main__":
