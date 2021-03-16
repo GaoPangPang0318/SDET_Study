@@ -6,7 +6,7 @@ import yaml
 from appium.webdriver.common.mobileby import MobileBy
 from appium.webdriver.webdriver import WebDriver
 
-from test_appium.conftest import root_log
+from live_uiframework.conftest import root_log
 
 
 class BasePage:
@@ -70,8 +70,8 @@ class BasePage:
 
     def parse_action(self, path, fun_name):
         with open(path, "r", encoding="utf-8") as f:
-            funciton = yaml.safe_load(f)
-            steps: List[Dict] = funciton[fun_name]
+            function = yaml.safe_load(f)
+            steps: List[Dict] = function[fun_name]
 
         # json 序列化与反序列化
         # json.dumps() 序列化  python 对象转化成字符串
@@ -80,6 +80,7 @@ class BasePage:
         for key, value in self._params.items():
             raw = raw.replace("${" + key + "}", value)
         steps = json.loads(raw)
+
         for step in steps:
             if step["action"] == "find_click":
                 self.find_click(step["by"], step["locator"])

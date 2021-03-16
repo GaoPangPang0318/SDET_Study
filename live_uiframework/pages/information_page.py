@@ -1,6 +1,6 @@
-from test_appium.pages.addresslist_page import AddressListPage
-from test_appium.pages.basepage import BasePage
-from test_appium.pages.work_page import WorkPage
+from live_uiframework.pages.addresslist_page import AddressListPage
+from live_uiframework.pages.basepage import BasePage
+from live_uiframework.pages.work_page import WorkPage
 
 
 

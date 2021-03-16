@@ -2,7 +2,7 @@
 __author__ = 'hogwarts_xixi'
 __time__ = '2021/3/12 8:22 下午'
 """
-from test_appium.pages.basepage import BasePage
+from live_uiframework.pages.basepage import BasePage
 
 
 class EditContactPage(BasePage):

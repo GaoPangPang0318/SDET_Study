@@ -1,0 +1,9 @@
+Tue, 16 Mar 2021 17:09:30 basepage.py[line:34] INFO find: by=xpath , locator = //*[@text='日程']
+Tue, 16 Mar 2021 17:09:32 basepage.py[line:34] INFO find: by=xpath , locator = //*[@text='通讯录']
+Tue, 16 Mar 2021 17:09:42 basepage.py[line:41] ERROR 未找到元素
+Tue, 16 Mar 2021 17:09:42 basepage.py[line:34] INFO find: by=xpath , locator = //*[@text='通讯录']
+Tue, 16 Mar 2021 17:09:45 basepage.py[line:34] INFO find: by=xpath , locator = //*[@text='手动输入添加']
+Tue, 16 Mar 2021 17:09:47 basepage.py[line:34] INFO find: by=xpath , locator = //*[contains(@text, '姓名')]/../android.widget.EditText
+Tue, 16 Mar 2021 17:09:49 basepage.py[line:34] INFO find: by=xpath , locator = //*[contains(@text, '手机')]/..//*[@text='必填']
+Tue, 16 Mar 2021 17:09:49 basepage.py[line:34] INFO find: by=xpath , locator = //*[@text='保存']
+Tue, 16 Mar 2021 17:09:49 basepage.py[line:34] INFO find: by=xpath , locator = //*[@text='添加成功']

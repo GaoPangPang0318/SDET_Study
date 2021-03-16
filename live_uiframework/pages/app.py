@@ -1,7 +1,7 @@
 from appium import webdriver
 # from robot.errors import Information
 
-from test_appium.pages.information_page import InformationPage
+from live_uiframework.pages.information_page import InformationPage
 
 
 class App:

@@ -1,7 +1,7 @@
 from appium.webdriver.common.mobileby import MobileBy
 
-from test_appium.pages.basepage import BasePage
-from test_appium.pages.sign_page import SignPage
+from live_uiframework.pages.basepage import BasePage
+from live_uiframework.pages.sign_page import SignPage
 
 
 class WorkPage(BasePage):

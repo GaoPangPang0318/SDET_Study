@@ -4,7 +4,7 @@ __time__ = '2021/3/12 8:38 下午'
 """
 import yaml
 
-from test_appium.pages.app import App
+from live_uiframework.pages.app import App
 
 
 class TestContact:
