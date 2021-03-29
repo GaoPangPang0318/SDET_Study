@@ -6,10 +6,12 @@
 # @Email        : 719453296@qq.com
 # -*- -*- -*- -*- -*- -*- -*- -*- -*-
 import requests
+from requests_toolbelt import MultipartEncoder
+
 
 def get_token():
     ID = 'ww598d3519e9646a48'
-    SECRET = 'kJTlk5pRU6POdDk16k1avSN6spNWux2zKpI8yUMVMLI'
+    SECRET = 'kJTlk5pRU6POdDk16k1avcYE1ZFXy4fPk4ICDUsN1jU'
     url=f'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid={ID}&corpsecret={SECRET}'
     token=requests.get(url).json()['access_token']
     print(token)
@@ -39,13 +41,37 @@ def test_readmem():
 def test_increupdatemem():
     #参考博客:https://blog.csdn.net/qq_38486203/article/details/101711696
     #1.上传临时素材，获取media_id
+
     media_type='file'
     url=f'https://qyapi.weixin.qq.com/cgi-bin/media/upload?access_token={get_token()}&type={media_type}'
-    data={"file":open('./files/members.csv','rb')}
-    r=requests.post(url,data=data)
+
+    #POST 请求multipart/form-data 格式的方法
+    #使用MultipartEncoder类
+    m=MultipartEncoder(
+        fields={
+            'name':'media',
+            #打开方式要是二进制的
+            'filename':('members.csv',open('./files/members.csv','rb'),'application/octet-stream')
+        },
+        boundary='acebdf13572468'
+    )
+    headers={
+        'Content-Type':m.content_type,
+        'boundary':m.boundary,
+    }
+    r=requests.post(url,data=m,headers=headers)
     print(r.json())
+    media_id=r.json()['media_id']
+
+
 
     #2.增量更新成员
+    add_url=f'https://qyapi.weixin.qq.com/cgi-bin/batch/syncuser?access_token={get_token()}'
+    data={
+        'media_id':media_id
+    }
+    r=requests.post(add_url,json=data)
+    print(r.json())
 
 
 
