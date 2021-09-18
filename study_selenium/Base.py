@@ -5,7 +5,7 @@ class Base():
         option = webdriver.ChromeOptions()
         option.add_experimental_option('w3c', False)
 
-        browser=os.getenv("brwser")  #参数从哪儿来，怎么来呢？？？
+        browser=os.getenv("browser")  #参数从哪儿来，怎么来呢？？？
         print("broswer",browser)
         if browser=="firefox":
             self.driver=webdriver.Firefox()

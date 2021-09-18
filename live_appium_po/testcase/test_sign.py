@@ -1,6 +1,5 @@
 from live_appium_po.pages.app import App
 
-
 class TestSign:
     def setup(self):
         self.app = App()

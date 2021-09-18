@@ -1,5 +1,4 @@
 from typing import List, Dict
-
 import yaml
 from appium.webdriver.common.mobileby import MobileBy
 from appium.webdriver.webdriver import WebDriver

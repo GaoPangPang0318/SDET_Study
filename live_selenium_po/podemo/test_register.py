@@ -11,4 +11,4 @@ class TestRegister:
 
     def test_register(self):
         # assert self.index.goto_login().goto_register().register()
-        assert self.index.goto_register().register()
+        assert self.index.goto_register().register_OK()

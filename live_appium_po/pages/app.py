@@ -1,8 +1,5 @@
 from appium import webdriver
-from robot.errors import Information
-
 from live_appium_po.pages.information_page import InformationPage
-
 
 class App:
     def __init__(self):
@@ -24,4 +21,5 @@ class App:
         self.driver.implicitly_wait(10)
 
     def goto_main(self):
-        return InformationPage(self.driver)
+        return InformationPage(self.driver)  #因为要复用一个driver，所以要传递driver
+                                             #为何使用return？ 通过return实现链式调用
