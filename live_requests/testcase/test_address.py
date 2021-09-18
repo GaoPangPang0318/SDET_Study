@@ -6,7 +6,7 @@ from live_requests.wework.address import Address
 class TestAddress:
     def setup(self):
         self.address = Address()
-        self.user_id = "zhangsan00123"
+        self.user_id = "zhangsan00123"  # 声明usr_id的变量
         self.name = "张三"
         self.mobile = "+86 13812300000"
         self.department = [1]
@@ -23,10 +23,10 @@ class TestAddress:
         # 利用删除接口进行数据清理
         self.address.delete_member(user_id)
         r = self.address.create_member(user_id, self.name, mobile, self.department)
-        assert r.get('errmsg', "network error") == "created"
+        assert r.get('errmsg', "network error") == "created"  #get操作可获取dict的内容
         r = self.address.get_member_information(user_id)
-        self.address.delete_member(user_id)
-        assert r.get("name") == self.name
+        self.address.delete_member(user_id)  #为什么断言之前删除？如果断言不通过删除就不会被调用。注意数据前后的操作
+        assert r.get("name") == self.name # 再次使用断言确保操作确实成功
 
 
     def test_get_member_information(self):
