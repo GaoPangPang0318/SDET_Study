@@ -1,4 +1,4 @@
-# 练习演示代码
+# 演示代码
 1. study_appium: 移动端app自动化测试     
 2. study_appium_androidwebview: 移动端app自动化测试——WebView测试    
 3. study_appium_po: 移动端app自动化测试——PageObject    
